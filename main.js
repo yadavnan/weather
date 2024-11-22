@@ -10,14 +10,14 @@ const conditionElement = document.getElementById('condition');
 const humidityElement = document.getElementById('humidity');
 const weatherGif = document.getElementById('weather-gif');
 
-// API keys from .env file
-const weatherApiKey = import.meta.env.VITE_API_KEY; // OpenWeatherMap API Key
-const giphyApiKey = import.meta.env.VITE_GIPHY_API_KEY; // Giphy API Key
 
-// Base URL for OpenWeatherMap
+const weatherApiKey = import.meta.env.VITE_API_KEY; 
+const giphyApiKey = import.meta.env.VITE_GIPHY_API_KEY; 
+
+
 const weatherBaseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
-// Fetch weather data
+
 async function getWeather(location) {
   try {
     const response = await fetch(
@@ -30,23 +30,23 @@ async function getWeather(location) {
       return;
     }
 
-    // Extract relevant data
+    
     const temperature = data.main.temp;
     const condition = data.weather[0].description;
     const humidity = data.main.humidity;
     const city = data.name;
 
-    // Update UI with weather data
+    
     cityName.textContent = city;
     tempElement.textContent = `${temperature}°C`;
     conditionElement.textContent = condition;
     humidityElement.textContent = `${humidity}%`;
 
-    // Hide loading spinner and show weather info
+    
     loading.classList.add('hidden');
     weatherInfo.classList.remove('hidden');
 
-    // Fetch and display a weather-related GIF
+    
     displayWeatherGif(condition);
   } catch (error) {
     console.error('Error fetching weather data:', error);
@@ -54,7 +54,7 @@ async function getWeather(location) {
   }
 }
 
-// Fetch and display a GIF related to the weather condition
+
 async function displayWeatherGif(condition) {
   try {
     const response = await fetch(
@@ -74,7 +74,7 @@ async function displayWeatherGif(condition) {
   }
 }
 
-// Handle form submission
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 

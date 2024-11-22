@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/weather/',  // Use your repository name here
   server: {
-    open: true, // Automatically open the app in the browser on startup
+    open: true,  // Open the app in the browser on startup
   },
-  base: '/<weather>/', // Replace <repo-name> with your GitHub repository name
 });

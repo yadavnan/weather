@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <script type="module" crossorigin src="/<weather>/assets/index-8lvKr4VT.js"></script>
+  <link rel="stylesheet" crossorigin href="/<weather>/assets/index-DLcuqkk9.css">
+</head>
+<body>
+  <div class="weather-container">
+    <h1>Weather Forecast</h1>
+    <form id="weather-form">
+      <input type="text" id="location" placeholder="Enter location" required>
+      <button type="submit">Get Weather</button>
+    </form>
+
+    <div id="loading" class="hidden">Loading...</div>
+
+    <div id="weather-info" class="hidden">
+      <h2>Weather in <span id="city-name"></span></h2>
+      <p>Temperature: <span id="temp"></span>°</p>
+      <p>Condition: <span id="condition"></span></p>
+      <p>Humidity: <span id="humidity"></span>%</p>
+      <div id="weather-gif"></div>
+    </div>
+  </div>
+
+</body>
+</html>
